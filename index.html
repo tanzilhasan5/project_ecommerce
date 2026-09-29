@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storly – Multipurpose eCommerce Tailwind CSS Template</title>
+  <meta name="description" content="Storly Multipurpose eCommerce Tailwind CSS Template with 20+ Pre-Made Stunning Designs, product details layouts, and high performance infrastructure.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Tailwind CSS CDN (For existing showcases and sliders) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            storly: {
+              dark: '#033440',
+              deep: '#02232b',
+              teal: '#05545b',
+              lime: '#a8f070',
+              limeHover: '#96e05d',
+              emerald: '#10b981'
+            }
+          },
+          fontFamily: {
+            sans: ['"Inter"', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Compiled SCSS Stylesheet (Strict Navbar + Hero Specification) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Additional Site Stylesheet (Infinite Sliders & Store) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-storly-lime selection:text-storly-dark font-sans">
+
+  <!-- Thin Dark Line At Very Top (~3px) -->
+  <div class="top-line-bar" aria-hidden="true"></div>
+
+  <!-- ================= 1. NAVBAR (WHITE, ~95PX, STICKY) ================= -->
+  <nav class="navbar navbar-expand-lg storly-navbar sticky-top" role="navigation" aria-label="Main Navigation">
+    <div class="custom-container navbar-container">
+      
+      <!-- Left: Storly Brand Logo (Inline SVG Cart + Leaves + Wordmark & Swoosh) -->
+      <a href="#" class="navbar-brand-logo" aria-label="Storly Home">
+        <svg class="brand-cart-svg" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Leaves at top-left of cart -->
+          <path d="M7 11C5 5 11 2 15 3C15 8 10 11 7 11Z" fill="#a8f070"/>
+          <path d="M13 9C12 4 17 1 20 2C20 6 16 9 13 9Z" fill="#14602f"/>
+          <!-- Cart Frame -->
+          <path d="M2 6H6.5L10 22C10.2 23 11 23.8 12 23.8H26C27 23.8 27.8 23 28 22L30.5 10H8" stroke="#033440" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Cart Grid Basket Lines -->
+          <path d="M14 10V23.5" stroke="#033440" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M20 10V23.5" stroke="#033440" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M26 10V23.5" stroke="#033440" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M8.5 15H29.5" stroke="#033440" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M9.5 19H28" stroke="#033440" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Wheels -->
+          <circle cx="13" cy="28.5" r="2.5" fill="#033440"/>
+          <circle cx="25" cy="28.5" r="2.5" fill="#033440"/>
+        </svg>
+        <span class="brand-wordmark">
+          Storly
+          <!-- Green swoosh underline -->
+          <svg class="brand-swoosh" viewBox="0 0 70 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 5C26 2 48 8 68 3" stroke="#a8f070" stroke-width="3.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Mobile Hamburger Toggler Button -->
+      <button class="navbar-toggler border-0 shadow-none px-2 py-1 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#storlyNavMenu" aria-controls="storlyNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Center Links & Right Button (Always visible on desktop and tablet) -->
+      <div class="storly-nav-menu navbar-collapse justify-content-between" id="storlyNavMenu">
+        
+        <!-- Center: Links "Demo", "Inner Pages", "Features", "FAQ" -->
+        <ul class="storly-nav-list mx-auto mb-0">
+          <li><a href="#demos" class="nav-link-item">Demo</a></li>
+          <li><a href="#inner-pages" class="nav-link-item">Inner Pages</a></li>
+          <li><a href="#features" class="nav-link-item">Features</a></li>
+          <li><a href="#faq" class="nav-link-item">FAQ</a></li>
+        </ul>
+
+        <!-- Right: Lime "Buy Now ↗" Button (bg #a8f070, dark-teal text, 8px radius) -->
+        <div class="d-flex align-items-center">
+          <a href="store.html" class="btn-storly-lime" aria-label="Buy Storly Theme Now">
+            <span>Buy Now</span>
+            <i class="fa-solid fa-arrow-up-right-from-square arrow-icon" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ================= 2. HERO SECTION (DARK TEAL, MIN-HEIGHT ~775PX) ================= -->
+  <section class="storly-hero" aria-label="Hero Section">
+    
+    <!-- Background: Large Faint Outlined Star/Burst Shapes (Low Opacity Teal-on-Teal) -->
+    <svg class="hero-starburst starburst-left" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"/>
+    </svg>
+    <svg class="hero-starburst starburst-right" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"/>
+    </svg>
+
+    <!-- Left Edge: 3 Stacked, Slightly Offset Website Mockup Cards (Diagonally Stacked) -->
+    <div class="hero-mockups-left" aria-hidden="true">
+      <!-- Mockup 1: Top (Daily Shopping Streamlined) -->
+      <div class="mockup-card mockup-left-1">
+        <img src="images/demo-daily-2.jpg" alt="Storly Daily Shopping Streamlined Demo">
+      </div>
+      <!-- Mockup 2: Mid, shifted right (Organic Supermarket) -->
+      <div class="mockup-card mockup-left-2">
+        <img src="images/demo-grocery-1.jpg" alt="Storly Organic Supermarket Demo">
+      </div>
+      <!-- Mockup 3: Bottom, shifted further right (Artisan Coffee Moments) -->
+      <div class="mockup-card mockup-left-3">
+        <img src="images/demo-coffee-4.jpg" alt="Storly Artisan Coffee Demo">
+      </div>
+    </div>
+
+    <!-- Right Edge: 2 Overlapping Mockup Cards -->
+    <div class="hero-mockups-right" aria-hidden="true">
+      <!-- Back Card: Scoop Into Sweet Happiness (Ice Cream Store) -->
+      <div class="mockup-card mockup-right-back">
+        <img src="images/demo-icecream-5.jpg" alt="Storly Sweet Ice Cream Store Demo">
+      </div>
+      <!-- Front Card: "Freshness in Every Sip" Tropicana juice & oranges (Health at Home) -->
+      <div class="mockup-card mockup-right-front">
+        <img src="images/demo-health-3.jpg" alt="Storly Health at Home Tropicana Juice Hero">
+      </div>
+    </div>
+
+    <!-- Center Column (Max-width ~860px, Text-align Center) -->
+    <div class="container hero-center-column">
+      
+      <!-- a) Dashed-Border Pill (1px dashed white, fully rounded, transparent bg) -->
+      <div class="hero-badge-pill" role="status">
+        <i class="fa-solid fa-sparkles sparkle-icon" aria-hidden="true"></i>
+        <span>Recognized For Excellence</span>
+      </div>
+
+      <!-- b) H1, White, ~56px, Line-height 1.25, Two Lines -->
+      <h1 class="hero-title">
+        Storly Multipurpose eCommerce<br class="d-none d-md-block">
+        Tailwind CSS Template
+      </h1>
+
+      <!-- c) Lime "Buy Now ↗" Button -->
+      <div>
+        <a href="store.html" class="hero-cta-btn" aria-label="Buy Now Storly eCommerce Template">
+          <span>Buy Now</span>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Bottom Row: 4 Columns, Centered, ~40px below button -->
+      <div class="hero-features-row">
+        <div class="row g-3 justify-content-center">
+          
+          <!-- 1. chart-bars icon – High Performance -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="hero-feature-item">
+              <div class="icon-box" aria-hidden="true">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <div class="feature-text">
+                <h2 class="feature-title">High Performance</h2>
+                <p class="feature-desc">Optimized for speed and performance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. pen-nib icon – Modern Design -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="hero-feature-item">
+              <div class="icon-box" aria-hidden="true">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <div class="feature-text">
+                <h2 class="feature-title">Modern Design</h2>
+                <p class="feature-desc">Clean, elegant & fully responsive layout.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. shield-check icon – Trusted & Secure -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="hero-feature-item">
+              <div class="icon-box" aria-hidden="true">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="feature-text">
+                <h2 class="feature-title">Trusted & Secure</h2>
+                <p class="feature-desc">Optimized for speed and performance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. headset icon – Dedicated support -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="hero-feature-item">
+              <div class="icon-box" aria-hidden="true">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <div class="feature-text">
+                <h2 class="feature-title">Dedicated support</h2>
+                <p class="feature-desc">Fast & friendly support for you.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 20+ PRE-MADE DESIGNS SECTION (SCREENSHOT 2) ================= -->
+  <section id="demos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+    
+    <!-- Giant Watermark "20+" (Exact Image 1) -->
+    <div class="text-center relative mb-14 pt-4">
+      <div class="huge-bg-number" aria-hidden="true">
+        20+
+      </div>
+      <div class="relative z-10 pt-10">
+        <h2 class="text-3xl sm:text-5xl font-black text-storly-dark font-heading mb-4 tracking-tight leading-tight">
+          Pre-Made Stunning Designs <br>For a Quick Start
+        </h2>
+        
+        <!-- 3 Badges with Circular Green Outline Checkmarks (Exact Image 1) -->
+        <div class="flex flex-wrap items-center justify-center gap-8 text-xs sm:text-sm font-bold text-slate-800">
+          <span class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full border border-teal-800/80 flex items-center justify-center text-teal-800 text-[11px] font-bold">✓</span>
+            <span>Install in minutes</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full border border-teal-800/80 flex items-center justify-center text-teal-800 text-[11px] font-bold">✓</span>
+            <span>No coding required</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full border border-teal-800/80 flex items-center justify-center text-teal-800 text-[11px] font-bold">✓</span>
+            <span>Easy to customize</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Pre-Made Demo Cards (Home 1 - Home 6) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Home 1 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-grocery-1.jpg" alt="Home 1 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 1</h3>
+          <p class="text-xs text-slate-400">Grocery Supermarket & Multi-Vendor</p>
+        </div>
+      </div>
+
+      <!-- Home 2 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-daily-2.jpg" alt="Home 2 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 2</h3>
+          <p class="text-xs text-slate-400">Daily Shopping & Streamlined Produce</p>
+        </div>
+      </div>
+
+      <!-- Home 3 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-coffee-4.jpg" alt="Home 3 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 3</h3>
+          <p class="text-xs text-slate-400">Artisan Coffee Roasters & Cafe</p>
+        </div>
+      </div>
+
+      <!-- Home 4 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-icecream-5.jpg" alt="Home 4 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 4</h3>
+          <p class="text-xs text-slate-400">Artisan Ice Cream & Confectionery</p>
+        </div>
+      </div>
+
+      <!-- Home 5 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-health-3.jpg" alt="Home 5 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 5</h3>
+          <p class="text-xs text-slate-400">Health & Wellness Living at Home</p>
+        </div>
+      </div>
+
+      <!-- Home 6 -->
+      <div class="demo-card bg-white rounded-3xl p-4 border border-slate-200 shadow-sm flex flex-col group">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3] mb-4 border border-slate-100">
+          <img src="images/demo-daily-2.jpg" alt="Home 6 Demo" class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-storly-dark/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 p-4">
+            <a href="store.html" class="btn-storly-lime px-5 py-2.5 rounded-full text-xs font-bold uppercase shadow-lg">
+              Launch Live Demo ↗
+            </a>
+          </div>
+        </div>
+        <div class="text-center pt-1 pb-2">
+          <h3 class="text-base font-extrabold text-storly-dark font-heading group-hover:text-emerald-600 transition">Home 6</h3>
+          <p class="text-xs text-slate-400">Pure Botanical Cosmetics & Wellness</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 20+ PRODUCT DETAILS LAYOUTS (SCREENSHOTS 3 & 4) ================= -->
+  <section id="product-details" class="bg-[#084d54] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    
+    <!-- Giant Watermark "20+" in Lime Gradient (Exact Image 2) -->
+    <div class="text-center relative mb-12 max-w-4xl mx-auto pt-6">
+      <div class="huge-bg-number-gradient" aria-hidden="true">
+        20+
+      </div>
+      <div class="relative z-10 pt-6">
+        <h2 class="text-3xl sm:text-5xl font-black font-heading mb-3 leading-tight tracking-tight text-[#a8f070]">
+          Accelerate Deployment With Pre-<br class="hidden sm:block">
+          Made Product Details Layouts.
+        </h2>
+        <p class="text-sm sm:text-base text-slate-200/90 mb-7 max-w-xl mx-auto font-normal">
+          Get personalized guidance from experienced accounting professionals.
+        </p>
+        <div class="flex items-center justify-center">
+          <a href="store.html" class="btn-storly-lime inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl text-sm font-bold shadow-lg hover:shadow-xl transition-all">
+            <span>Buy Now</span>
+            <span class="text-base font-bold">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sliding Row 1 (Top Row: Moves Left ←) -->
+    <div class="marquee-wrapper marquee-dark mb-6">
+      <div class="marquee-track animate-marquee-left">
+        <!-- Set A -->
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Product Layout 1" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Product Layout 2" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Product Layout 3" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Product Layout 4" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Product Layout 5" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <!-- Set B (Duplicate for seamless loop) -->
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Product Layout 1" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Product Layout 2" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Product Layout 3" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Product Layout 4" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Product Layout 5" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+
+    <!-- Sliding Row 2 (Bottom Row: Moves Right →) -->
+    <div class="marquee-wrapper marquee-dark">
+      <div class="marquee-track animate-marquee-right">
+        <!-- Set A -->
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Product Layout 6" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Product Layout 7" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Product Layout 8" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Product Layout 9" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Product Layout 10" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <!-- Set B (Duplicate for seamless loop) -->
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Product Layout 6" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Product Layout 7" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Product Layout 8" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Product Layout 9" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-dark overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Product Layout 10" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= MAIN FEATURES 8-GRID (SCREENSHOT 5) ================= -->
+  <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      
+      <!-- Badge: ✦ Main Features -->
+      <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-storly-lime/30 text-storly-dark font-extrabold text-xs uppercase tracking-wider mb-4">
+        <span>✦</span>
+        <span>Main Features</span>
+      </div>
+
+      <h2 class="text-2xl sm:text-4xl font-black text-storly-dark font-heading leading-tight">
+        Sophisticated Infrastructure Designed <br class="hidden sm:block">
+        For Boundless Organizational Growth
+      </h2>
+    </div>
+
+    <!-- 8 Grid Box with exact border lines from Screenshot 5 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm">
+      
+      <div class="feature-box p-8 text-center border-r border-b border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="smartphone" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Fully Responsive</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-r border-b border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="eye" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Retina Display</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-r border-b border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="headphones" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Support & Upgrade</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-b border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <span class="text-xl font-bold font-heading">Aa</span>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Google Font</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-r border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="pen-tool" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Unique Design</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-r border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="settings" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Easily Customizable</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center border-r border-slate-200">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="layout" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Modern Design</h4>
+      </div>
+
+      <div class="feature-box p-8 text-center">
+        <div class="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 mx-auto mb-4 flex items-center justify-center text-slate-700 shadow-sm">
+          <i data-lucide="share-2" class="w-7 h-7"></i>
+        </div>
+        <h4 class="text-xs sm:text-sm font-bold text-slate-900 font-heading">Social Buttons</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= AWESOME 30+ INNER PAGES DUAL SLIDING MARQUEE (FULL SCREEN) ================= -->
+  <section id="inner-pages" class="py-20 w-full overflow-hidden relative">
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 mb-12">
+      <!-- Pill Badge: ✦ Page Library -->
+      <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-storly-lime/30 text-storly-dark font-extrabold text-xs uppercase tracking-wider mb-4">
+        <span>✦</span>
+        <span>Page Library</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-black text-storly-dark font-heading mb-3">
+        Awesome <span class="text-emerald-700">30+</span> Inner Pages
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
+        A complete set of professionally designed inner pages to launch faster, look premium, and convert better.
+      </p>
+    </div>
+
+    <!-- Inner Pages Row 1 (Top Row: Moves Left ←, Exact Screenshot Dimensions) -->
+    <div class="marquee-wrapper marquee-light py-2 mb-6">
+      <div class="marquee-track animate-marquee-left">
+        <!-- Set A -->
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Health at Home" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Grocery Supermarket" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Daily Shopping Streamlined" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Artisan Coffee Roasters" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Artisan Ice Cream Store" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <!-- Set B (Duplicate for seamless loop) -->
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Health at Home" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Grocery Supermarket" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Daily Shopping Streamlined" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Artisan Coffee Roasters" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Artisan Ice Cream Store" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+
+    <!-- Inner Pages Row 2 (Bottom Row: Moves Right →, Exact Screenshot Dimensions) -->
+    <div class="marquee-wrapper marquee-light py-2">
+      <div class="marquee-track animate-marquee-right">
+        <!-- Set A -->
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Artisan Ice Cream Store" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Artisan Coffee Roasters" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Health at Home" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Grocery Supermarket" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Daily Shopping Streamlined" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <!-- Set B (Duplicate for seamless loop) -->
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-icecream-5.jpg" alt="Artisan Ice Cream Store" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-coffee-4.jpg" alt="Artisan Coffee Roasters" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-health-3.jpg" alt="Health at Home" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-grocery-1.jpg" alt="Grocery Supermarket" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+
+        <div class="storly-slider-card bg-white storly-card-shadow-light overflow-hidden group cursor-pointer hover:-translate-y-1.5 transition-all duration-300" onclick="window.location.href='store.html'">
+          <img src="images/demo-daily-2.jpg" alt="Daily Shopping Streamlined" class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW CAN WE HELP YOU? (FAQ ACCORDION - SCREENSHOT 2) ================= -->
+  <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-slate-100">
+    <div class="text-center mb-12">
+      <!-- Pill Badge: ✦ FAQ -->
+      <div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-storly-lime/30 text-storly-dark font-extrabold text-xs uppercase tracking-wider mb-4">
+        <span>✦</span>
+        <span>FAQ</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-black text-storly-dark font-heading mb-3">
+        How Can We Help You?
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
+        We understand that you have questions, and we welcome them. Below is the collection of queries which comes frequently from our clients.
+      </p>
+    </div>
+
+    <!-- Accordion List (Screenshot 2) -->
+    <div class="space-y-4">
+      
+      <!-- FAQ 01 -->
+      <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-storly-dark/40 shadow-sm">
+        <button onclick="window.toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-900 font-heading">
+          <span>01. What Type Of Websites Can I Build With This Theme?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+          You can build any modern eCommerce website: multi-vendor marketplaces, organic supermarkets, gadget & electronics stores, fashion & clothing boutiques, furniture, jewelry, and beauty cosmetic shops with full responsiveness.
+        </div>
+      </div>
+
+      <!-- FAQ 02 -->
+      <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-storly-dark/40 shadow-sm">
+        <button onclick="window.toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-900 font-heading">
+          <span>02. Will I Get All The Demos For Single Purchase With Lifetime Validity?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+          Yes! A single license grants you unlimited access to all 20+ homepage demos, 30+ inner pages, lifetime updates, and complete source code without recurring monthly fees.
+        </div>
+      </div>
+
+      <!-- FAQ 03 -->
+      <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-storly-dark/40 shadow-sm">
+        <button onclick="window.toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-900 font-heading">
+          <span>03. Can I Change The Theme Language To My Local Language?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+          Absolutely. The code is written in clean HTML5 & Tailwind CSS, making it 100% translation-ready for any language including Bengali (বাংলা), Arabic (RTL compatible), Spanish, German, and French.
+        </div>
+      </div>
+
+      <!-- FAQ 04 -->
+      <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-storly-dark/40 shadow-sm">
+        <button onclick="window.toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-900 font-heading">
+          <span>04. How To Install The Bullish Theme In WordPress?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+          Simply navigate to Appearance > Themes > Add New > Upload Theme in your WordPress administration dashboard, upload the provided theme zip archive, and click Activate to launch the one-click demo importer.
+        </div>
+      </div>
+
+      <!-- FAQ 05 -->
+      <div class="faq-item border border-slate-200 rounded-2xl overflow-hidden transition-all bg-white hover:border-storly-dark/40 shadow-sm">
+        <button onclick="window.toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-slate-900 font-heading">
+          <span>05. How Fast Is Your Support?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer hidden px-5 pb-5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+          Our dedicated engineering team operates 24/7. Response times average under 2 hours with hands-on assistance, code explanations, and free bug fixes.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= $29 AWWWARDS PRICING CTA (SCREENSHOT 3) ================= -->
+  <section class="bg-storly-dark bg-storly-hero text-white py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden text-center">
+    
+    <!-- Background glow & shapes -->
+    <div class="absolute inset-0 bg-pattern-shapes opacity-40 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-storly-teal/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center">
+      
+      <!-- Laurel Wreath Award Badge (Screenshot 3) -->
+      <div class="mb-6 flex flex-col items-center">
+        <div class="relative flex items-center justify-center">
+          <!-- SVG Laurel Wreath -->
+          <svg class="w-32 h-24 text-storly-lime" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left Leaves -->
+            <path d="M25 65C23 55 25 45 30 35C32 30 36 25 42 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22 62C16 60 12 52 14 46C16 40 22 42 25 48" fill="currentColor"/>
+            <path d="M26 50C20 45 18 37 22 32C26 27 30 31 31 38" fill="currentColor"/>
+            <path d="M32 36C28 30 29 22 34 18C39 14 41 20 40 27" fill="currentColor"/>
+            <path d="M42 22C40 15 44 8 50 6C55 4 55 12 51 18" fill="currentColor"/>
+
+            <!-- Right Leaves -->
+            <path d="M95 65C97 55 95 45 90 35C88 30 84 25 78 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M98 62C104 60 108 52 106 46C104 40 98 42 95 48" fill="currentColor"/>
+            <path d="M94 50C100 45 102 37 98 32C94 27 90 31 89 38" fill="currentColor"/>
+            <path d="M88 36C92 30 91 22 86 18C81 14 79 20 80 27" fill="currentColor"/>
+            <path d="M78 22C80 15 76 8 70 6C65 4 65 12 69 18" fill="currentColor"/>
+          </svg>
+
+          <!-- Inside Text & W. Icon -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center pt-2">
+            <span class="text-[9px] uppercase tracking-widest text-storly-lime font-black">3X AWWWARDS</span>
+            <span class="text-[8px] uppercase tracking-wider text-slate-300">WINNER 2026</span>
+            <span class="text-2xl font-black text-white font-heading mt-0.5">W.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Huge $29 Price (Screenshot 3) -->
+      <div class="text-6xl sm:text-7xl md:text-8xl font-black font-heading text-storly-lime tracking-tight leading-none mb-4">
+        $29
+      </div>
+
+      <!-- Heading -->
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-black font-heading mb-4 leading-tight">
+        Create your site today. Purchase <br class="hidden sm:block">
+        Storly theme now!
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-xs sm:text-sm text-slate-300 max-w-lg mb-8 leading-relaxed">
+        We promise you'll be blown away by all features and designs that Storly offers. We'll continue to update and upgrade Storly with new designs and features.
+      </p>
+
+      <!-- Buy Now Button (Screenshot 3) -->
+      <a href="store.html" class="btn-storly-lime inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-extrabold shadow-2xl">
+        <span>Buy Now</span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-storly-deep text-white border-t border-storly-teal/60 py-8 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-base font-black text-white font-heading">Storly<span class="text-storly-lime">~</span></span>
+        <span>– Multipurpose eCommerce Tailwind CSS Template</span>
+      </div>
+      <p>© 2026 Storly. Created with Antigravity IDE.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main Application Script -->
+  <script src="js/main.js"></script>
+
+  <script>
+    function toggleFaq(button) {
+      const parent = button.closest('.faq-item');
+      const answer = parent.querySelector('.faq-answer');
+      const icon = parent.querySelector('.faq-icon');
+      
+      const isOpen = !answer.classList.contains('hidden');
+      
+      // Close all other faqs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-answer').classList.add('hidden');
+        const ic = item.querySelector('.faq-icon');
+        if (ic) ic.style.transform = 'rotate(0deg)';
+      });
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    }
+    window.toggleFaq = toggleFaq;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* Storly Brand Styling, Fonts, and Micro-Interactions */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --storly-dark: #023430;
+  --storly-dark-deep: #012421;
+  --storly-teal: #054e48;
+  --storly-lime: #9be15d;
+  --storly-lime-hover: #88d444;
+  --storly-emerald: #10b981;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #022b27;
+}
+::-webkit-scrollbar-thumb {
+  background: #0a655d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9be15d;
+}
+
+/* Storly Lime Glow & Button */
+.btn-storly-lime {
+  background-color: #9be15d;
+  color: #023430;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-storly-lime:hover {
+  background-color: #88d444;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(155, 225, 93, 0.4);
+}
+
+/* Wireframe background pattern */
+.bg-storly-hero {
+  background: radial-gradient(circle at 50% 30%, #054f48 0%, #023430 70%, #012421 100%);
+  position: relative;
+}
+
+.bg-pattern-shapes {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(155, 225, 93, 0.05) 0%, transparent 25%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 30%);
+}
+
+/* Demo Card Hover */
+.demo-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.demo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(2, 52, 48, 0.18);
+}
+.demo-card img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.demo-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Feature Box Grid */
+.feature-box {
+  transition: all 0.3s ease;
+}
+.feature-box:hover {
+  background-color: #f8fafc;
+  transform: translateY(-3px);
+}
+
+/* Large Background 20+ text - Light Section (Exact Image 1) */
+.huge-bg-number {
+  font-size: clamp(6.5rem, 16vw, 12rem);
+  font-weight: 900;
+  color: #bbf781;
+  opacity: 0.7;
+  line-height: 0.75;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Large Background 20+ text - Dark Section Gradient (Exact Image 2) */
+.huge-bg-number-gradient {
+  font-size: clamp(7rem, 18vw, 13.5rem);
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #a8f070 0%, rgba(168, 240, 112, 0.45) 55%, rgba(3, 52, 64, 0.05) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* ================= INFINITE MARQUEE SLIDERS ================= */
+.marquee-wrapper {
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+/* Gradient Fade Edges */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.marquee-light::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.marquee-light::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.marquee-dark::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(2, 52, 48, 1) 0%, rgba(2, 52, 48, 0) 100%);
+}
+.marquee-dark::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(2, 52, 48, 1) 0%, rgba(2, 52, 48, 0) 100%);
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+/* Slide Left Animation */
+.animate-marquee-left {
+  animation: marqueeLeft 32s linear infinite;
+}
+.marquee-wrapper:hover .animate-marquee-left {
+  animation-play-state: paused;
+}
+
+/* Slide Right Animation */
+.animate-marquee-right {
+  animation: marqueeRight 35s linear infinite;
+}
+.marquee-wrapper:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* Keyframes */
+@keyframes marqueeLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Responsive speed tuning */
+@media (max-width: 768px) {
+  .animate-marquee-left {
+    animation-duration: 22s;
+  }
+  .animate-marquee-right {
+    animation-duration: 24s;
+  }
+}
+
+/* FAQ Accordion Transition */
+.faq-answer {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================= EXACT SCREENSHOT SHADOWS & SIZING ================= */
+.storly-card-shadow-dark {
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.78), 0 8px 24px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+}
+
+.storly-card-shadow-light {
+  box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.1), 0 6px 18px -4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 1.25rem;
+}
+
+.storly-hero-mockup-shadow {
+  box-shadow: 0 35px 75px -15px rgba(0, 0, 0, 0.88), 0 14px 32px -8px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.16);
+  border-radius: 1.5rem;
+}
+
+.storly-slider-card {
+  width: 440px;
+  height: 275px;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .storly-slider-card {
+    width: 480px;
+    height: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .storly-slider-card {
+    width: 500px;
+    height: 312px;
+  }
+}

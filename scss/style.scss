@@ -1,0 +1,599 @@
+// ==========================================
+// Storly Landing Page - SCSS Design Tokens & Styles
+// Tech Stack: Bootstrap 5.3, SCSS, Font Awesome 6, Inter
+// ==========================================
+
+// 1. DESIGN TOKENS & VARIABLES
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+// Colors
+$hero-bg-start: #033440;
+$hero-bg-end: #05545b;
+$accent-lime: #a8f070;
+$accent-lime-hover: #96e05d;
+$icon-box-bg: #0c3e21; // #14602f-ish dark green
+$icon-box-border: rgba(168, 240, 112, 0.22);
+$text-light-teal: #b9d4d6;
+$text-dark: #033440;
+$text-nav: #1a292c;
+$top-line-color: #033440;
+$white: #ffffff;
+
+// Spacing & Sizes
+$navbar-height: 95px;
+$container-max-w: 1240px;
+$btn-radius: 8px;
+$icon-box-size: 58px;
+$icon-box-radius: 14px;
+$mockup-radius: 16px;
+
+// ==========================================
+// 2. BASE & ACCESSIBILITY
+// ==========================================
+:root {
+  --storly-hero-start: #{$hero-bg-start};
+  --storly-hero-end: #{$hero-bg-end};
+  --storly-lime: #{$accent-lime};
+  --storly-lime-hover: #{$accent-lime-hover};
+  --storly-light-teal: #{$text-light-teal};
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  color: #334155;
+  background-color: $white;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Visible keyboard focus for accessibility
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid $accent-lime !important;
+  outline-offset: 3px !important;
+}
+
+.custom-container {
+  max-width: $container-max-w;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+// ==========================================
+// 3. TOP BORDER & NAVBAR
+// ==========================================
+.top-line-bar {
+  height: 3px;
+  background-color: $top-line-color;
+  width: 100%;
+}
+
+.storly-navbar {
+  background-color: $white;
+  min-height: $navbar-height;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  border-bottom: 1px solid #f1f5f9;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &.navbar-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: $navbar-height;
+    width: 100%;
+  }
+
+  // Brand Logo
+  .navbar-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    user-select: none;
+
+    .brand-cart-svg {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.25s ease;
+    }
+
+    &:hover .brand-cart-svg {
+      transform: scale(1.05);
+    }
+
+    .brand-wordmark {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: $text-dark;
+      letter-spacing: -0.03em;
+      position: relative;
+      line-height: 1;
+
+      .brand-swoosh {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+      }
+    }
+  }
+
+  // Navbar Menu Container
+  .storly-nav-menu,
+  .navbar-collapse {
+    display: flex !important;
+    visibility: visible !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    @media (max-width: 768px) {
+      display: none !important;
+      &.show {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        padding: 1.5rem 0;
+        background: #ffffff;
+        border-top: 1px solid #f1f5f9;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  // Center Navigation Links (Demo, Inner Pages, Features, FAQ)
+  .storly-nav-list {
+    display: flex !important;
+    visibility: visible !important;
+    align-items: center;
+    justify-content: center;
+    gap: 46px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 991.98px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 1.25rem;
+    }
+
+    .nav-link-item {
+      color: #1a292c !important;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      position: relative;
+      display: inline-block;
+
+      &:hover {
+        color: #0c727e !important;
+      }
+    }
+  }
+
+  // Right Buy Now Button
+  .btn-storly-lime {
+    background-color: $accent-lime;
+    color: $text-dark;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: $btn-radius;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    white-space: nowrap;
+
+    .arrow-icon {
+      transition: transform 0.2s ease;
+      font-size: 13px;
+    }
+
+    &:hover {
+      background-color: $accent-lime-hover;
+      color: $text-dark;
+      box-shadow: 0 8px 16px -4px rgba(168, 240, 112, 0.45);
+
+      .arrow-icon {
+        transform: translate(2px, -2px);
+      }
+    }
+  }
+}
+
+// ==========================================
+// 4. HERO SECTION
+// ==========================================
+.storly-hero {
+  min-height: 775px;
+  background: radial-gradient(circle at 50% 25%, $hero-bg-end 0%, $hero-bg-start 75%, #02232b 100%);
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+
+  // Background Faint Starburst Outlines
+  .hero-starburst {
+    position: absolute;
+    pointer-events: none;
+    stroke: rgba(5, 95, 103, 0.45);
+    fill: none;
+    stroke-width: 1.2;
+    z-index: 1;
+
+    &.starburst-left {
+      left: 6%;
+      top: 18%;
+      width: 190px;
+      height: 190px;
+      animation: slowRotate 70s linear infinite;
+    }
+
+    &.starburst-right {
+      right: 7%;
+      top: 14%;
+      width: 220px;
+      height: 220px;
+      animation: slowRotateReverse 80s linear infinite;
+    }
+  }
+
+  // Floating Mockups Container
+  .hero-mockups-left,
+  .hero-mockups-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    height: 480px;
+    pointer-events: none;
+    z-index: 2;
+
+    @media (max-width: 1199.98px) {
+      width: 360px;
+      height: 360px;
+      opacity: 0.45;
+    }
+
+    @media (max-width: 991.98px) {
+      display: none; // Hidden on mobile/small tablets
+    }
+  }
+
+  // Left Stacked Mockups
+  .hero-mockups-left {
+    left: -110px;
+
+    @media (min-width: 1400px) {
+      left: -60px;
+    }
+
+    .mockup-card {
+      position: absolute;
+      border-radius: $mockup-radius;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      background: #022b33;
+      opacity: 0.68;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(3, 52, 64, 0.15) 0%, rgba(3, 52, 64, 0.35) 100%);
+        pointer-events: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      // Card 1: Top, shifted left (woman portrait on yellow)
+      &.mockup-left-1 {
+        top: 20px;
+        left: 10px;
+        width: 370px;
+        height: 240px;
+        transform: rotate(-3deg);
+        animation: floatCardLeft1 7s ease-in-out infinite alternate;
+      }
+
+      // Card 2: Mid, shifted right (supermarket aisle)
+      &.mockup-left-2 {
+        top: 150px;
+        left: 60px;
+        width: 390px;
+        height: 250px;
+        transform: rotate(-1deg);
+        z-index: 2;
+        opacity: 0.74;
+        animation: floatCardLeft2 8s ease-in-out infinite alternate;
+        animation-delay: -2s;
+      }
+
+      // Card 3: Bottom, shifted further right (snack packs)
+      &.mockup-left-3 {
+        top: 280px;
+        left: 110px;
+        width: 360px;
+        height: 230px;
+        transform: rotate(2deg);
+        z-index: 3;
+        animation: floatCardLeft3 6.5s ease-in-out infinite alternate;
+        animation-delay: -4s;
+      }
+    }
+  }
+
+  // Right Overlapping Mockups
+  .hero-mockups-right {
+    right: -110px;
+
+    @media (min-width: 1400px) {
+      right: -60px;
+    }
+
+    .mockup-card {
+      position: absolute;
+      border-radius: $mockup-radius;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      background: #022b33;
+      opacity: 0.68;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(3, 52, 64, 0.15) 0%, rgba(3, 52, 64, 0.35) 100%);
+        pointer-events: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      // Back Card: Top right (3 product photos)
+      &.mockup-right-back {
+        top: 40px;
+        right: 40px;
+        width: 380px;
+        height: 250px;
+        transform: rotate(4deg);
+        z-index: 1;
+        animation: floatCardRightBack 7.5s ease-in-out infinite alternate;
+      }
+
+      // Front Card: Center right (Hero "Freshness in Every Sip" Tropicana juice & oranges)
+      &.mockup-right-front {
+        top: 170px;
+        right: 15px;
+        width: 420px;
+        height: 275px;
+        transform: rotate(1deg);
+        z-index: 2;
+        opacity: 0.76;
+        animation: floatCardRightFront 8.5s ease-in-out infinite alternate;
+        animation-delay: -3s;
+      }
+    }
+  }
+
+  // Center Column Content
+  .hero-center-column {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  // Dashed Pill Badge
+  .hero-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 18px;
+    border: 1px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    background: transparent;
+    color: $white;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 1.85rem;
+    letter-spacing: 0.01em;
+
+    .sparkle-icon {
+      color: $accent-lime;
+      font-size: 13px;
+    }
+  }
+
+  // Main Heading
+  .hero-title {
+    font-size: clamp(2.3rem, 5.2vw, 56px);
+    font-weight: 800;
+    color: $white;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Center CTA Button
+  .hero-cta-btn {
+    background-color: $accent-lime;
+    color: $text-dark;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: $btn-radius;
+    padding: 13px 26px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    box-shadow: 0 10px 24px -6px rgba(168, 240, 112, 0.45);
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    margin-bottom: 2.85rem;
+
+    .arrow-icon {
+      transition: transform 0.2s ease;
+      font-size: 13px;
+    }
+
+    &:hover {
+      background-color: $accent-lime-hover;
+      color: $text-dark;
+      box-shadow: 0 12px 28px -4px rgba(168, 240, 112, 0.6);
+
+      .arrow-icon {
+        transform: translate(2.5px, -2.5px);
+      }
+    }
+  }
+
+  // Bottom 4 Feature Items
+  .hero-features-row {
+    margin-top: 1rem;
+    padding-top: 1rem;
+
+    .hero-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      padding: 0.5rem 0.25rem;
+
+      .icon-box {
+        width: $icon-box-size;
+        height: $icon-box-size;
+        flex-shrink: 0;
+        border-radius: $icon-box-radius;
+        background-color: $icon-box-bg;
+        border: 1px solid $icon-box-border;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $accent-lime;
+        font-size: 20px;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+
+        svg, i {
+          color: $accent-lime;
+        }
+      }
+
+      &:hover .icon-box {
+        transform: translateY(-2px);
+        border-color: rgba(168, 240, 112, 0.45);
+      }
+
+      .feature-text {
+        .feature-title {
+          font-size: 14px;
+          font-weight: 500;
+          color: $white;
+          margin: 0 0 2px 0;
+          line-height: 1.3;
+        }
+
+        .feature-desc {
+          font-size: 14px;
+          color: $text-light-teal;
+          margin: 0;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// 5. ANIMATIONS & PREFERS-REDUCED-MOTION
+// ==========================================
+@keyframes slowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slowRotateReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes floatCardLeft1 {
+  0% { transform: rotate(-3deg) translateY(0); }
+  100% { transform: rotate(-3deg) translateY(-10px); }
+}
+
+@keyframes floatCardLeft2 {
+  0% { transform: rotate(-1deg) translateY(0); }
+  100% { transform: rotate(-1deg) translateY(10px); }
+}
+
+@keyframes floatCardLeft3 {
+  0% { transform: rotate(2deg) translateY(0); }
+  100% { transform: rotate(2deg) translateY(-8px); }
+}
+
+@keyframes floatCardRightBack {
+  0% { transform: rotate(4deg) translateY(0); }
+  100% { transform: rotate(4deg) translateY(-10px); }
+}
+
+@keyframes floatCardRightFront {
+  0% { transform: rotate(1deg) translateY(0); }
+  100% { transform: rotate(1deg) translateY(10px); }
+}
+
+// Disable animations for users who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .hero-starburst,
+  .hero-mockups-left .mockup-card,
+  .hero-mockups-right .mockup-card {
+    animation: none !important;
+  }
+}

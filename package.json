@@ -1,0 +1,16 @@
+{
+  "name": "storly-ecommerce",
+  "version": "1.0.0",
+  "description": "Storly - Multipurpose eCommerce Tailwind CSS Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -p 3000 .",
+    "dev": "serve -p 3000 ."
+  },
+  "keywords": ["ecommerce", "tailwind", "storly", "shop"],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
