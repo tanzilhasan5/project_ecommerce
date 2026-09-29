@@ -457,7 +457,8 @@ input:focus-visible {
   }
 
   // Center Content Container (Compact ~860px to keep features clustered together)
-  .hero-center-container {
+  .hero-center-container,
+  .hero-center-column {
     max-width: 860px;
     width: 100%;
     margin-left: auto;
@@ -539,7 +540,8 @@ input:focus-visible {
   }
 
   // Bottom 4 Feature Items Bar (Compact & clustered together under title)
-  .hero-features-bar {
+  .hero-features-bar,
+  .hero-features-row {
     display: flex;
     align-items: center;
     justify-content: center;

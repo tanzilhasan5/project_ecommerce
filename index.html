@@ -45,11 +45,11 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Compiled SCSS Stylesheet (Strict Navbar + Hero Specification) -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Compiled SCSS Stylesheet (Strict Navbar + Hero Specification with cache bust) -->
+  <link rel="stylesheet" href="css/style.css?v=2.1">
 
-  <!-- Additional Site Stylesheet (Infinite Sliders & Store) -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Additional Site Stylesheet (Infinite Sliders & Store with cache bust) -->
+  <link rel="stylesheet" href="css/styles.css?v=2.1">
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-storly-lime selection:text-storly-dark font-sans">
 
@@ -156,90 +156,90 @@
       </div>
     </div>
 
-    <!-- Center Hero Content Container (Compact ~860px to keep features clustered together) -->
-    <div class="hero-center-container">
+    <!-- Center Hero Content Container (Bulletproof Centering with Bootstrap + Custom classes) -->
+    <div class="container hero-center-container hero-center-column text-center mx-auto" style="max-width: 860px; position: relative; z-index: 10;">
       
       <!-- a) Dashed-Border Pill (1px dashed white, fully rounded, transparent bg) -->
-      <div class="hero-badge-pill" role="status">
+      <div class="hero-badge-pill d-inline-flex align-items-center justify-content-center gap-2 mx-auto" role="status">
         <i class="fa-solid fa-sparkles sparkle-icon" aria-hidden="true"></i>
         <span>Recognized For Excellence</span>
       </div>
 
       <!-- b) H1, White, ~56px, Line-height 1.25, Two Lines -->
-      <h1 class="hero-title">
+      <h1 class="hero-title text-center mx-auto">
         Storly Multipurpose eCommerce<br class="d-none d-md-block">
         Tailwind CSS Template
       </h1>
 
       <!-- c) Lime "Buy Now ↗" Button -->
-      <div class="hero-cta-wrap">
-        <a href="store.html" class="hero-cta-btn" aria-label="Buy Now Storly eCommerce Template">
+      <div class="hero-cta-wrap text-center my-3">
+        <a href="store.html" class="hero-cta-btn btn-storly-lime d-inline-flex align-items-center justify-content-center gap-2 mx-auto" aria-label="Buy Now Storly eCommerce Template">
           <span>Buy Now</span>
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon" aria-hidden="true"></i>
         </a>
       </div>
 
-      <!-- Bottom Row: 4 Columns, Clean Horizontal Alignment -->
-      <div class="hero-features-bar">
+      <!-- d) Bottom Row: 4 Columns, Clean Horizontal Alignment (Flex + Row Fallback) -->
+      <div class="hero-features-bar hero-features-row row g-3 justify-content-center align-items-center mx-auto">
         
         <!-- 1. [ll] icon – High Performance -->
-        <div class="hero-feature-item">
-          <div class="icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <div class="col-6 col-lg-3 hero-feature-item d-flex align-items-center text-start">
+          <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h2"></path>
               <path d="M19 4h2a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-2"></path>
               <line x1="9" y1="8" x2="9" y2="16"></line>
               <line x1="15" y1="8" x2="15" y2="16"></line>
             </svg>
           </div>
-          <div class="feature-text">
-            <h2 class="feature-title">High Performance</h2>
-            <p class="feature-desc">Optimized for speed and performance.</p>
+          <div class="feature-text ms-2">
+            <h2 class="feature-title mb-1 text-white">High Performance</h2>
+            <p class="feature-desc mb-0">Optimized for speed and performance.</p>
           </div>
         </div>
 
         <!-- 2. pen-nib icon – Modern Design -->
-        <div class="hero-feature-item">
-          <div class="icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="col-6 col-lg-3 hero-feature-item d-flex align-items-center text-start">
+          <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="m12 19 7-7 3 3-7 7-3-3z"></path>
               <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
               <path d="m2 2 7.5 7.5"></path>
               <circle cx="11" cy="11" r="1.5"></circle>
             </svg>
           </div>
-          <div class="feature-text">
-            <h2 class="feature-title">Modern Design</h2>
-            <p class="feature-desc">Clean, elegant & fully responsive layout.</p>
+          <div class="feature-text ms-2">
+            <h2 class="feature-title mb-1 text-white">Modern Design</h2>
+            <p class="feature-desc mb-0">Clean, elegant & fully responsive layout.</p>
           </div>
         </div>
 
         <!-- 3. shield-check icon – Trusted & Secure -->
-        <div class="hero-feature-item">
-          <div class="icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="col-6 col-lg-3 hero-feature-item d-flex align-items-center text-start">
+          <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               <polyline points="9 12 11 14 15 10"></polyline>
             </svg>
           </div>
-          <div class="feature-text">
-            <h2 class="feature-title">Trusted & Secure</h2>
-            <p class="feature-desc">Optimized for speed and performance.</p>
+          <div class="feature-text ms-2">
+            <h2 class="feature-title mb-1 text-white">Trusted & Secure</h2>
+            <p class="feature-desc mb-0">Optimized for speed and performance.</p>
           </div>
         </div>
 
         <!-- 4. headset icon – Dedicated support -->
-        <div class="hero-feature-item">
-          <div class="icon-box" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="col-6 col-lg-3 hero-feature-item d-flex align-items-center text-start">
+          <div class="icon-box d-flex align-items-center justify-content-center flex-shrink-0" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
               <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
               <path d="M19 16v3a2 2 0 0 1-2 2h-3"></path>
             </svg>
           </div>
-          <div class="feature-text">
-            <h2 class="feature-title">Dedicated support</h2>
-            <p class="feature-desc">Fast & friendly support for you.</p>
+          <div class="feature-text ms-2">
+            <h2 class="feature-title mb-1 text-white">Dedicated support</h2>
+            <p class="feature-desc mb-0">Fast & friendly support for you.</p>
           </div>
         </div>
 
