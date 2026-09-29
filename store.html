@@ -36,22 +36,24 @@
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col relative selection:bg-storly-lime selection:text-storly-dark">
 
   <!-- ================= TOP DEMO SWITCHER BAR ================= -->
-  <div class="bg-storly-deep text-white text-xs py-2 px-4 border-b border-storly-teal flex flex-wrap items-center justify-between gap-2 z-50">
+  <div class="bg-storly-deep text-white text-xs py-2 px-4 border-b border-storly-teal flex flex-wrap items-center justify-between gap-3 z-50">
     <div class="flex items-center gap-3">
-      <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full font-bold transition text-storly-lime">
+      <a href="index.html#demos" class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full font-bold transition text-storly-lime">
         <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-        <span>Back to Template Showcase</span>
+        <span>All 20+ Demos</span>
       </a>
       <span class="hidden sm:inline text-slate-400">|</span>
-      <span class="hidden sm:inline text-slate-300 font-medium">Demo Mode: <strong class="text-white">Home 1 (Supermarket & Groceries)</strong></span>
+      <span class="text-slate-300 font-medium">Viewing: <strong id="active-demo-label" class="text-storly-lime">Home 1 – Supermarket & Groceries</strong></span>
     </div>
-    <div class="flex items-center gap-2">
-      <span class="text-slate-400 hidden md:inline">Quick Switch:</span>
-      <button onclick="window.filterByCategory('grocery')" class="px-2.5 py-0.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-[11px] transition">Groceries</button>
-      <button onclick="window.filterByCategory('electronics')" class="px-2.5 py-0.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-[11px] transition">Tech</button>
-      <button onclick="window.filterByCategory('fashion')" class="px-2.5 py-0.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-[11px] transition">Fashion</button>
-      <a href="index.html" class="px-3 py-1 bg-storly-lime hover:bg-storly-limeHover text-storly-dark font-extrabold text-[11px] rounded-lg transition ml-2 shadow">
-        Showcase Page ↗
+    <div class="flex items-center flex-wrap gap-1.5" id="demo-pills-bar">
+      <a href="store.html?demo=1" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="1">Home 1: Grocery</a>
+      <a href="store.html?demo=2" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="2">Home 2: Daily Produce</a>
+      <a href="store.html?demo=3" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="3">Home 3: Coffee</a>
+      <a href="store.html?demo=4" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="4">Home 4: Ice Cream</a>
+      <a href="store.html?demo=5" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="5">Home 5: Health & Juice</a>
+      <a href="store.html?demo=6" class="demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white" data-demo="6">Home 6: Botanical</a>
+      <a href="index.html" class="px-3 py-1 bg-storly-lime hover:bg-storly-limeHover text-storly-dark font-extrabold text-[11px] rounded-lg transition ml-1 shadow">
+        Showcase ↗
       </a>
     </div>
   </div>

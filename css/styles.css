@@ -61,19 +61,124 @@ h1, h2, h3, h4, h5, .font-heading {
     radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 30%);
 }
 
-/* Demo Card Hover */
+/* ===================================================
+   ThemeForest Signature Smooth Scrolling Demo Preview
+   =================================================== */
 .demo-card {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  overflow: hidden;
 }
+
 .demo-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 30px -10px rgba(2, 52, 48, 0.18);
+  box-shadow: 0 20px 35px -10px rgba(3, 52, 64, 0.18), 0 0 0 1px rgba(168, 240, 112, 0.4);
 }
-.demo-card img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+.browser-mockup-header {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.demo-card:hover img {
-  transform: scale(1.04);
+
+.browser-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+.browser-dot.dot-red { background-color: #ff5f56; }
+.browser-dot.dot-yellow { background-color: #ffbd2e; }
+.browser-dot.dot-green { background-color: #27c93f; }
+
+.browser-url-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  color: #64748b;
+  background: #ffffff;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demo-preview-frame {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.demo-preview-frame img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: block;
+  transform: translateY(0);
+  transition: transform 5s ease-in-out;
+  will-change: transform;
+}
+
+.demo-card:hover .demo-preview-frame img {
+  transform: translateY(calc(-100% + 380px));
+}
+
+.demo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 52, 64, 0.42);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.demo-card:hover .demo-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-preview-launch {
+  background: #a8f070;
+  color: #033440;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 10px 20px -5px rgba(168, 240, 112, 0.5);
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+}
+
+.demo-card:hover .btn-preview-launch {
+  transform: translateY(0);
+}
+
+.btn-preview-launch:hover {
+  background: #96e05d;
+  color: #033440;
+  transform: scale(1.05);
 }
 
 /* Feature Box Grid */

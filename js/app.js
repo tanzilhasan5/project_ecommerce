@@ -1063,8 +1063,126 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// ================= MULTI-DEMO CONFIGURATIONS (ThemeForest Showcase Demos 1-6) =================
+const DEMO_CONFIGS = {
+  '1': {
+    name: 'Home 1 – Supermarket & Groceries',
+    title: 'Storly – Home 01 (Supermarket & Groceries)',
+    category: 'grocery',
+    heroTag: 'EXCLUSIVE 25% OFF',
+    heroTitle: 'Shop the Smart Way Anytime, Anywhere',
+    heroDesc: 'Discover your favorite brands, organic produce, farm-fresh dairy, and exclusive discounts with 30-min express doorstep delivery.',
+    heroCta: 'Shop Groceries Now',
+    heroBadge: 'Save Up To 45% Off',
+    heroImage: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-emerald-950/85 via-emerald-900/60 to-transparent'
+  },
+  '2': {
+    name: 'Home 2 – Daily Shopping & Produce',
+    title: 'Storly – Home 02 (Daily Shopping & Produce)',
+    category: 'grocery',
+    heroTag: 'DAILY HARVEST 2026',
+    heroTitle: 'Your Daily Shopping, Streamlined',
+    heroDesc: 'Enjoy a seamless grocery shopping experience with farm-crisp vegetables, fresh orchard fruits, and everyday household essentials at wholesale prices.',
+    heroCta: 'Explore Daily Fresh',
+    heroBadge: 'Orchard Fresh Guaranteed',
+    heroImage: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-teal-950/90 via-emerald-900/65 to-transparent'
+  },
+  '3': {
+    name: 'Home 3 – Artisan Coffee Roasters',
+    title: 'Storly – Home 03 (Artisan Coffee Roasters & Cafe)',
+    category: 'grocery',
+    heroTag: 'SPECIALTY ROASTS',
+    heroTitle: 'Freshly Brewed Coffee Moments',
+    heroDesc: 'Single-origin Ethiopian beans, signature Colombian espresso roasts, cold brew blends, and precision barista gear delivered fresh.',
+    heroCta: 'Discover Roasts',
+    heroBadge: 'Direct Trade Certified',
+    heroImage: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-[#1e130c]/90 via-[#3a2012]/70 to-transparent'
+  },
+  '4': {
+    name: 'Home 4 – Sweet Ice Cream & Treats',
+    title: 'Storly – Home 04 (Sweet Ice Cream & Treats)',
+    category: 'grocery',
+    heroTag: 'SCOOP INTO HAPPINESS',
+    heroTitle: 'Handcrafted Artisan Ice Cream & Desserts',
+    heroDesc: 'Indulge in slow-churned Madagascar vanilla, Belgian dark chocolate swirl, fruit sorbets, and gourmet confectionery treats.',
+    heroCta: 'Order Sweet Treats',
+    heroBadge: '100% Real Dairy & Fruits',
+    heroImage: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-[#3b0764]/85 via-[#4a044e]/60 to-transparent'
+  },
+  '5': {
+    name: 'Home 5 – Health & Living at Home',
+    title: 'Storly – Home 05 (Health & Living at Home)',
+    category: 'beauty',
+    heroTag: 'FUNCTIONAL BLENDS',
+    heroTitle: 'Freshness in Every Sip & Daily Vitality',
+    heroDesc: 'Pure cold-pressed juices, immunity-boosting citrus blends, daily multivitamins, and clinically supported wellness staples.',
+    heroCta: 'Shop Health & Juice',
+    heroBadge: 'Zero Added Sugar',
+    heroImage: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b7?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-[#033440]/90 via-[#05545b]/65 to-transparent'
+  },
+  '6': {
+    name: 'Home 6 – Pure Botanical Cosmetics',
+    title: 'Storly – Home 06 (Pure Botanical Cosmetics)',
+    category: 'beauty',
+    heroTag: 'PURE BOTANICAL CARE',
+    heroTitle: 'Clean Organic Skincare & Daily Glow',
+    heroDesc: 'Sustainably sourced botanical facial serums, calming essential body washes, and cruelty-free organic cosmetic formulations.',
+    heroCta: 'Explore Botanical',
+    heroBadge: 'Cruelty Free & Eco',
+    heroImage: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=80',
+    heroGradient: 'from-emerald-950/90 via-stone-900/60 to-transparent'
+  }
+};
+
+function initDemoMode() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const demoId = urlParams.get('demo') || '1';
+  const config = DEMO_CONFIGS[demoId] || DEMO_CONFIGS['1'];
+
+  // Update document title
+  document.title = config.title;
+
+  // Update header label
+  const labelEl = document.getElementById('active-demo-label');
+  if (labelEl) labelEl.textContent = config.name;
+
+  // Highlight pill in top switcher
+  document.querySelectorAll('.demo-pill').forEach(pill => {
+    if (pill.dataset.demo === demoId) {
+      pill.className = 'demo-pill px-2.5 py-1 rounded-lg text-[11px] font-black transition bg-storly-lime text-storly-dark shadow';
+    } else {
+      pill.className = 'demo-pill px-2.5 py-1 rounded-lg text-[11px] font-bold transition bg-white/10 hover:bg-white/20 text-white';
+    }
+  });
+
+  // Inject customized primary slide for this demo into HERO_SLIDES
+  if (typeof HERO_SLIDES !== 'undefined' && HERO_SLIDES.length) {
+    HERO_SLIDES[0] = {
+      tag: config.heroTag,
+      title: config.heroTitle,
+      desc: config.heroDesc,
+      badge: config.heroBadge,
+      cta: config.heroCta,
+      categoryTarget: config.category,
+      bgGradient: config.heroGradient,
+      image: config.heroImage
+    };
+  }
+
+  // Pre-filter category
+  if (config.category && typeof filterByCategory === 'function') {
+    filterByCategory(config.category);
+  }
+}
+
 // ================= APP INITIALIZATION =================
 document.addEventListener('DOMContentLoaded', () => {
+  initDemoMode();
   initHeroSlider();
   startCountdownTimer();
   renderFlashDeals();
@@ -1111,3 +1229,4 @@ window.toggleCategoryMegaMenu = toggleCategoryMegaMenu;
 window.toggleUserMenu = toggleUserMenu;
 window.handleNewsletterSubmit = handleNewsletterSubmit;
 window.showToast = showToast;
+window.initDemoMode = initDemoMode;
