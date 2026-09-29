@@ -41,7 +41,7 @@ A modern, high-performance eCommerce template inspired directly by **Storly – 
 ## 🚀 How to Run Locally
 
 The dev server is currently running at:
-**[http://localhost:3000]([http://localhost:3000](https://tanzilhasan5.github.io/project_ecommerce/))**
+**[https://tanzilhasan5.github.io/project_ecommerce/])**
 
 If you ever want to restart it later in terminal:
 ```bash
