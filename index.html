@@ -117,46 +117,47 @@
   </nav>
 
   <!-- ================= 2. HERO SECTION (DARK TEAL, MIN-HEIGHT ~775PX) ================= -->
+  <!-- ================= 2. HERO SECTION (MATCHING SCREENSHOT) ================= -->
   <section class="storly-hero" aria-label="Hero Section">
     
-    <!-- Background: Large Faint Outlined Star/Burst Shapes (Low Opacity Teal-on-Teal) -->
-    <svg class="hero-starburst starburst-left" viewBox="0 0 100 100" aria-hidden="true">
-      <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"/>
+    <!-- Background: Outlined Star/Burst Shapes (Matching Screenshot) -->
+    <svg class="hero-starburst starburst-left" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M100 0 L115 65 L180 30 L145 90 L200 120 L135 135 L160 195 L105 160 L75 200 L65 140 L5 155 L45 105 L0 75 L60 65 Z" fill="none" stroke="rgba(14, 92, 102, 0.45)" stroke-width="2" stroke-linejoin="round" />
     </svg>
-    <svg class="hero-starburst starburst-right" viewBox="0 0 100 100" aria-hidden="true">
-      <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"/>
+    <svg class="hero-starburst starburst-right" viewBox="0 0 200 200" aria-hidden="true">
+      <polygon points="100,10 120,70 185,45 145,98 195,135 130,145 150,195 98,155 65,195 60,135 10,140 48,95 8,60 70,68" fill="none" stroke="rgba(14, 92, 102, 0.4)" stroke-width="1.8" stroke-linejoin="round"/>
     </svg>
 
-    <!-- Left Edge: 3 Stacked, Slightly Offset Website Mockup Cards (Diagonally Stacked) -->
+    <!-- Left Edge: 3 Layered Website Mockup Cards (Diagonally Stacked) -->
     <div class="hero-mockups-left" aria-hidden="true">
       <!-- Mockup 1: Top (Daily Shopping Streamlined) -->
       <div class="mockup-card mockup-left-1">
         <img src="images/demo-daily-2.jpg" alt="Storly Daily Shopping Streamlined Demo">
       </div>
-      <!-- Mockup 2: Mid, shifted right (Organic Supermarket) -->
+      <!-- Mockup 2: Mid (Organic Supermarket aisle) -->
       <div class="mockup-card mockup-left-2">
         <img src="images/demo-grocery-1.jpg" alt="Storly Organic Supermarket Demo">
       </div>
-      <!-- Mockup 3: Bottom, shifted further right (Artisan Coffee Moments) -->
+      <!-- Mockup 3: Bottom (Artisan Coffee / Grocery banner) -->
       <div class="mockup-card mockup-left-3">
-        <img src="images/demo-coffee-4.jpg" alt="Storly Artisan Coffee Demo">
+        <img src="images/demo-coffee-4.jpg" alt="Storly Artisan Demo">
       </div>
     </div>
 
     <!-- Right Edge: 2 Overlapping Mockup Cards -->
     <div class="hero-mockups-right" aria-hidden="true">
-      <!-- Back Card: Scoop Into Sweet Happiness (Ice Cream Store) -->
+      <!-- Back Card: Sweet Happiness / Store Demo -->
       <div class="mockup-card mockup-right-back">
-        <img src="images/demo-icecream-5.jpg" alt="Storly Sweet Ice Cream Store Demo">
+        <img src="images/demo-icecream-5.jpg" alt="Storly Ice Cream Store Demo">
       </div>
       <!-- Front Card: "Freshness in Every Sip" Tropicana juice & oranges (Health at Home) -->
       <div class="mockup-card mockup-right-front">
-        <img src="images/demo-health-3.jpg" alt="Storly Health at Home Tropicana Juice Hero">
+        <img src="images/demo-health-3.jpg" alt="Storly Freshness in Every Sip Demo">
       </div>
     </div>
 
-    <!-- Center Column (Max-width ~860px, Text-align Center) -->
-    <div class="container hero-center-column">
+    <!-- Center Hero Content Container (Compact ~860px to keep features clustered together) -->
+    <div class="hero-center-container">
       
       <!-- a) Dashed-Border Pill (1px dashed white, fully rounded, transparent bg) -->
       <div class="hero-badge-pill" role="status">
@@ -171,70 +172,77 @@
       </h1>
 
       <!-- c) Lime "Buy Now ↗" Button -->
-      <div>
+      <div class="hero-cta-wrap">
         <a href="store.html" class="hero-cta-btn" aria-label="Buy Now Storly eCommerce Template">
           <span>Buy Now</span>
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon" aria-hidden="true"></i>
         </a>
       </div>
 
-      <!-- Bottom Row: 4 Columns, Centered, ~40px below button -->
-      <div class="hero-features-row">
-        <div class="row g-3 justify-content-center">
-          
-          <!-- 1. chart-bars icon – High Performance -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="hero-feature-item">
-              <div class="icon-box" aria-hidden="true">
-                <i class="fa-solid fa-chart-column"></i>
-              </div>
-              <div class="feature-text">
-                <h2 class="feature-title">High Performance</h2>
-                <p class="feature-desc">Optimized for speed and performance.</p>
-              </div>
-            </div>
+      <!-- Bottom Row: 4 Columns, Clean Horizontal Alignment -->
+      <div class="hero-features-bar">
+        
+        <!-- 1. [ll] icon – High Performance -->
+        <div class="hero-feature-item">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h2"></path>
+              <path d="M19 4h2a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-2"></path>
+              <line x1="9" y1="8" x2="9" y2="16"></line>
+              <line x1="15" y1="8" x2="15" y2="16"></line>
+            </svg>
           </div>
-
-          <!-- 2. pen-nib icon – Modern Design -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="hero-feature-item">
-              <div class="icon-box" aria-hidden="true">
-                <i class="fa-solid fa-pen-nib"></i>
-              </div>
-              <div class="feature-text">
-                <h2 class="feature-title">Modern Design</h2>
-                <p class="feature-desc">Clean, elegant & fully responsive layout.</p>
-              </div>
-            </div>
+          <div class="feature-text">
+            <h2 class="feature-title">High Performance</h2>
+            <p class="feature-desc">Optimized for speed and performance.</p>
           </div>
-
-          <!-- 3. shield-check icon – Trusted & Secure -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="hero-feature-item">
-              <div class="icon-box" aria-hidden="true">
-                <i class="fa-solid fa-shield-halved"></i>
-              </div>
-              <div class="feature-text">
-                <h2 class="feature-title">Trusted & Secure</h2>
-                <p class="feature-desc">Optimized for speed and performance.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. headset icon – Dedicated support -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <div class="hero-feature-item">
-              <div class="icon-box" aria-hidden="true">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <div class="feature-text">
-                <h2 class="feature-title">Dedicated support</h2>
-                <p class="feature-desc">Fast & friendly support for you.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- 2. pen-nib icon – Modern Design -->
+        <div class="hero-feature-item">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 19 7-7 3 3-7 7-3-3z"></path>
+              <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="m2 2 7.5 7.5"></path>
+              <circle cx="11" cy="11" r="1.5"></circle>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h2 class="feature-title">Modern Design</h2>
+            <p class="feature-desc">Clean, elegant & fully responsive layout.</p>
+          </div>
+        </div>
+
+        <!-- 3. shield-check icon – Trusted & Secure -->
+        <div class="hero-feature-item">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h2 class="feature-title">Trusted & Secure</h2>
+            <p class="feature-desc">Optimized for speed and performance.</p>
+          </div>
+        </div>
+
+        <!-- 4. headset icon – Dedicated support -->
+        <div class="hero-feature-item">
+          <div class="icon-box" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8f070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              <path d="M19 16v3a2 2 0 0 1-2 2h-3"></path>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h2 class="feature-title">Dedicated support</h2>
+            <p class="feature-desc">Fast & friendly support for you.</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
